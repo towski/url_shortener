@@ -6,16 +6,19 @@ class TinyUrlsController < ApplicationController
   def create
     @tiny_url = TinyUrl.new tiny_url_params
     if @tiny_url.save
-      redirect_to tiny_url_path(@tiny_url)
+      redirect_to tiny_url_path(@tiny_url.tiny_path)
     else
       render :new
     end
   end
 
   def show
-    @tiny_url = TinyUrl.find_by_id(params[:id])
+    @tiny_url = TinyUrl.find_by_tiny_path(params[:id])
     if @tiny_url
+      # TODO: move to helper, we need the request to get our current host
       @url = "http://#{request.host_with_port}/#{@tiny_url.tiny_path}"
+    else 
+      redirect_to new_tiny_url_path
     end
   end
 

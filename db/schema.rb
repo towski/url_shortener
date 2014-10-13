@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 20141013025649) do
   create_table "tiny_urls", force: true do |t|
     t.string   "url"
     t.string   "tiny_path"
-    t.string   "protocol"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tiny_urls", ["tiny_path"], name: "index_tiny_urls_on_tiny_path", unique: true, using: :btree
 
   create_table "tinyurls", force: true do |t|
     t.string   "url"

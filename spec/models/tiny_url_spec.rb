@@ -13,7 +13,6 @@ RSpec.describe TinyUrl, :type => :model do
   it "sets tinyurl" do
     url = TinyUrl.create! :url => "http://domain"
     expect(url.tiny_path).to be 
-    expect(url.protocol).to eq("http") 
     url.reload
     # should be tiny
     expect(url.tiny_path.size < 6).to be true

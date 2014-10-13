@@ -16,11 +16,10 @@ class TinyUrl < ActiveRecord::Base
     begin
       uri = URI.parse(url)
       unless uri.kind_of?(URI::HTTP)
-        errors.add(:url, "URL doesn't match http://")
+        errors.add(:url, "URL doesn't match http(s)://domain")
       end
-      self.protocol = uri.scheme
     rescue URI::InvalidURIError
-      errors.add(:url, "Problem with URL")
+      errors.add(:url, "Problem handling URL")
     end
   end
 end

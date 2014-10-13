@@ -1,12 +1,8 @@
 <div style='margin:auto'>
-<% if @url %>
-  <h3>Your url is</h3>
-  <%= link_to @url, @url %>
-  <p>which links to: </p>
-  <%= link_to @tiny_url.url, @tiny_url.url %>
-<% else %>
-  No url found
-<% end %>
+<h3>Your url is</h3>
+<%= link_to @url, @url %>
+<p>which links to: </p>
+<%= link_to @tiny_url.url, @tiny_url.url %>
 <p>
 <%= link_to "new url", new_tiny_url_url %>
 </p>

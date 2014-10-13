@@ -7,6 +7,7 @@
 # Ignore bundler config.
 
 **.swp
+*.swp
 /.bundle
 
 # Ignore the default SQLite database.

@@ -1,5 +1,4 @@
 class TinyUrl < ActiveRecord::Base
-  HASH_ID_SALT = "this is my salt"
   validate :valid_url
 
   after_save :set_tiny_url

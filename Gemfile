@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 gem 'mysql2'
+gem 'pg'
 gem 'hashids'
 # Use SCSS for stylesheets
 # Use Uglifier as compressor for JavaScript assets

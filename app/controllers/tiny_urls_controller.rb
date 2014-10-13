@@ -18,6 +18,7 @@ class TinyUrlsController < ApplicationController
       # TODO: move to helper, we need the request to get our current host
       @url = "http://#{request.host_with_port}/#{@tiny_url.tiny_path}"
     else 
+      flash[:notice] = "Tiny url not found"
       redirect_to new_tiny_url_path
     end
   end
